@@ -120,3 +120,10 @@ input[type=checkbox]:checked+label{
 input:focus{
     background-color: pink;
 }
+
+button:enabled{
+    background-color: pink;
+}
+button:disabled{
+    background-color: red자;
+}
