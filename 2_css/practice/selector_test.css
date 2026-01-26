@@ -1,39 +1,28 @@
 /* 1 */
-#container1.highlight{
-    background-color: yellow;
-}
+#container1.highlight{background-color: yellow;}
+
 /* 2 */
-#container2 p{
-    color: red;
-}
-#container2 pre>p{
-    color: pink;
-}
+#container2 > p{color:red} 
+#container2 pre {color:pink;} 
+
 /* 3 */
-#container3 > input:not([type=submit]){
-    border: 1px solid blue;
-}
-/* 4 */
-#container4 > h1,.title{
-    color: green;
-    font-size: 20px;
-}
-/* 5 */
-div[class^=user]{
-    background-color: lightgray;
-}
-div[class$=info]{
-   color: red;
-}
-div[class=product]{
-    background-color: coral;
-}
-div[class|=admin]{
-    background-color: greenyellow;
+#container3 > input:not(input[type=submit]){
+    border : 1px solid blue; 
 }
 
+/* 4 */
+#container4 > h1 , #container4 > .title{
+    color:green;
+    font-size: 20px ;
+}
+/* 5 */
+div[class^=user]{background-color: lightgray;}
+div[class$=info]{color: red;}
+div[class~=product]{background-color: coral;}
+div[class|=admin]{background-color: greenyellow;}
+
 /* 6 */
-#container6 > input:active{
+#container6 > input:focus{
     background-color: yellow;
 }
 #container6 > input:hover{
@@ -46,15 +35,16 @@ div[class|=admin]{
 }
 
 /* 8 */
-.container8 > p:last-of-type{
-    color: blue;
+.container8 > p:only-of-type{
+    color:blue;
 }
-
+ 
 /* 9 */
-#container9 > p[title^=important]{
-    background-color: red;
+#container9 > p[title*=important]:not(p[title*=not-important]){
+    background-color:red;     
 }
+ 
 /* 10 */
-#menu >.active {
-    color: red;
+#menu > .active{
+    color:red; 
 }
