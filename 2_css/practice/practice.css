@@ -126,11 +126,12 @@ div{
 #id-pw-area > div:first-child{
     flex-basis: 75%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 #id-pw-area > div:last-child{
     flex-basis: 25%;
+    display: flex;
     justify-content: center;
 }
 
