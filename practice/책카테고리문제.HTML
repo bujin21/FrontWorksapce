@@ -100,29 +100,24 @@
             체크 박스 선택 후 카테고리 선택을 누르면 하단 네모에 선택한 카테고리 출력.
         */
         function printCategory(){
-            var checks = document.querySelectorAll("input[name=category]:checked");
-            var str = "";
-            checks.forEach(ch => {
-                str = str+"("+ch.value+")";
-            });
-            var category = document.getElementById('area');
-            category.innerText = str;
+            area.innerHTML = "";// 내용 초기화
+
+            // 체크한 체크박스들 가져오기
+            var categorys = document.querySelectorAll("input[name=category]:checked");
+            for(let i =0; i<categorys.length; i++){
+                area.innerHTML += categorys[i].value+" ";
+            }
         }
 
         /* 2번기능 (전체선택기능).
          전체선택 체크박스 선택시 모든 카테고리가 선택되며, 선택 해제서 모든 체크박스가 선택 해제. 
         */
         function selectAll(){
-            var check = document.querySelector("input[id=selectAll]");
-            var cate = document.querySelectorAll("input[name=category]");
-            if(check.checked){
-                cate.forEach(ct=>{
-                    ct.checked =true;
-                });
-            }else{
-                cate.forEach(ct=>{
-                    ct.checked =false;
-                });
+           var checked = document.querySelector("#selectAll").checked;
+            var categorys = document.querySelectorAll("input[name=category]");
+
+            for(let i =0; i<categorys.length; i++){
+                categorys[i].checked = checked;
             }
         }
 
@@ -131,16 +126,12 @@
            하나라도 선택이 되어있지 않으면 전체선택 체크박스는 선택 해제
         */
         function checkCategory(checkbox){
-           var check = document.querySelector("input[id=selectAll]");
-           var cate = document.querySelectorAll("input[name=category]");
-           var checkcate =document.querySelectorAll("input[name=category]:checked");
-           if(checkbox.checked){
-                if(cate.length == checkcate.length){
-                    check.checked = 'true';    
-                }
-            }else{
-                check.checked = 'false';
-            }
+            // 전체선택 체크박스
+            var selectAll = document.querySelector("#selectAll");
+            var checkboxes = document.querySelectorAll("input[name=category]");
+            var checkedboxes =document.querySelectorAll("input[name=category]:checked"); 
+
+            selectAll.checked = checkboxes.length == checkedboxes.length;
             
            
            
