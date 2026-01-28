@@ -32,9 +32,9 @@
 	<div id="area"></div>
 	<script type="text/javascript">
 		function printValue() {
-			var name = document.querySelector("input").value;
+			var name = document.querySelector("input[placeholder='구매자의 이름을 입력하세요.']").value;
 			var pname =document.querySelector("#pname").value;
-			var price = document.querySelector('[name=price]').value;
+			var price = document.querySelector('input[name=price]').value;
 
 			var str= "구입자 : "+name+"님<br>"+"구입상품 : "+pname+"<br>"+"구매가격 : "+price+"만원";
 			area.innerHTML ="<div>"+str+"</div>";
