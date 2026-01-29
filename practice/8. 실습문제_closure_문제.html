@@ -20,15 +20,9 @@
 			var sum = 0;
 
 			return function(){
-				var input = document.getElementById("myadder").value;
-				var num = Number(input);
-
-				if (isNaN(num) || num < 1) return;
-				for (let i = 1; i <= num; i++) {
-					sum += i;
-				}
-
-       			 alert("현재까지의 합 : " + sum);
+				if (isNaN(myadder.value)) return;
+				sum += Number(myadder.value);
+				alert(sum);
 			}
 
 

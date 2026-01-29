@@ -29,8 +29,11 @@
       students.push(new Student("임꺽정", 100, 56, 50, 32, 88));
     //2.반복문을 통해 객체배열 순회. 요소별 toString메소드 호출하기
 
-    for (var i = 0; i < students.length; i++) {
-        console.log(students[i].toString());
+    // for (var i = 0; i < students.length; i++) {
+    //     console.log(students[i].toString());
+    // }
+    for(var student of students){
+      console.log(student.toString());
     }
     /* 
       출력결과 : 
@@ -43,24 +46,57 @@
   /**
    * Student 선언 (class 방식, 생성자 함수방식 아무거나)   
    */ 
-  function Student(name, java, oracle, html5, css3, javascript) {
-    this.name = name;
-    this.java = java;
-    this.oracle = oracle;
-    this.html5 = html5;
-    this.css3 = css3;
-    this.javascript = javascript;
+  // function Student(name, java, oracle, html5, css3, javascript) {
+  //   this.name = name;
+  //   this.java = java;
+  //   this.oracle = oracle;
+  //   this.html5 = html5;
+  //   this.css3 = css3;
+  //   this.javascript = javascript;
 
-    this.getSum = function () {
-        return this.java + this.oracle + this.html5 + this.css3 + this.javascript;
-    };
+  //   this.getSum = function () {
+  //       return this.java + this.oracle + this.html5 + this.css3 + this.javascript;
+  //   };
 
-    this.getAvg = function () {
-        return Math.round((this.getSum() / 5) * 10) / 10;
-    };
+  //   this.getAvg = function () {
+  //       return Math.round((this.getSum() / 5) * 10) / 10;
+  //   };
 
-    this.toString = function () {
-        return "이름=" + this.name +
+  //   this.toString = function () {
+  //       return "이름=" + this.name +
+  //           ", java=" + this.java +
+  //           ", oracle=" + this.oracle +
+  //           ", html5=" + this.html5 +
+  //           ", css3=" + this.css3 +
+  //           ", javascript=" + this.javascript +
+  //           ", 총점=" + this.getSum() +
+  //           ", 평점=" + this.getAvg();
+  //   };
+  // }
+  class Student{
+    constructor(name, java, oracle, html5, css3, javascript){
+      this.name = name;
+      this.java = java;
+      this.oracle = oracle;
+      this.html5 = html5;
+      this.css3 = css3;
+      this.javascript = javascript;
+    }
+
+    getSum(){
+      return this.java +
+              this.css3 +
+              this.oracle +
+              this.html5 +
+              this.javascript;
+    }
+
+    getAvg(){
+      return Math.floor(this.getSum() / 5 * 10) / 10;
+    }
+
+    toString(){
+      return "이름=" + this.name +
             ", java=" + this.java +
             ", oracle=" + this.oracle +
             ", html5=" + this.html5 +
@@ -68,9 +104,8 @@
             ", javascript=" + this.javascript +
             ", 총점=" + this.getSum() +
             ", 평점=" + this.getAvg();
-    };
+    }
   }
-  
   
   </script>
 
