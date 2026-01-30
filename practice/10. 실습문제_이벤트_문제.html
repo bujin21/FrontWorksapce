@@ -31,42 +31,25 @@
   <div class="btn-wrapper">
     <button type="button" data-url='https://www.naver.com'>네이버</button>&nbsp;
     <button type="button" data-url='https://www.google.com'>구글</button>&nbsp;
-    <button type="button" data-url='https://www.iei.or.kr'>KH</button>&nbsp;
     <button type="button" data-url='https://www.w3schools.com'>와삼</button>
+    <button type="button" data-url='https://www.iei.or.kr'>KH</button>&nbsp;
   </div>
   <script>
-    // 1. 데이터를 JavaScript 객체로 구성하고 배열로 관리
-    const btnData = [
-        { value: '네이버', url: 'https://www.naver.com' },
-        { value: '구글', url: 'https://www.google.com' },
-        { value: 'KH', url: 'https://www.iei.or.kr' },
-        { value: '와삼', url: 'https://www.w3schools.com' }
-    ];
+    document.querySelector("#btn-generate").onclick = function(e){
+      var btns = document.querySelectorAll('.btn-wrapper > button');
 
-    document.querySelector('#btn-generate').onclick = function(){
-        const wrapper = document.querySelector('.btn-wrapper');
-        
-        // 기존 버튼들을 초기화하고 싶다면 주석 해제 (중복 생성 방지)
-        // wrapper.innerHTML = '';
+      for(var button of btns){
+        var btn = document.createElement("button");//<button></button>
+        btn.innerText = button.innerText;
+        btn.dataset.url = button.dataset.url;
 
-        // 2. 배열을 순회하면서 button 태그를 동적으로 생성
-        btnData.forEach((item) => {
-            const newBtn = document.createElement('button');
-            newBtn.type = 'button';
-            newBtn.textContent = item.value;
-            
-            // 3. 생성된 버튼을 클릭하면 각각의 url로 페이지 이동
-            newBtn.onclick = function(){
-                location.href = item.url;
-            };
+        btn.onclick = function(e){
+          location.assign(this.dataset.url);
+        }
+        document.querySelector(".btn-wrapper").appendChild(btn);
+      }
+    }
 
-            // wrapper div에 추가
-            wrapper.appendChild(newBtn);
-            
-            // 버튼 사이 간격을 위해 공백 추가 (이미지 상의 &nbsp; 역할)
-            wrapper.appendChild(document.createTextNode(' '));
-        });
-    };
   </script>
 
 </body>

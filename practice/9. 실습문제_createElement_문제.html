@@ -59,17 +59,26 @@
             2) 등록 완료후 작성한 내용을 비워줄것
         */
         function insertBoard(){
-            var cnt = 1;
-            var title = document.querySelector("[name=title]");
-            var content = document.querySelector("[name=content]");
-            if(title.value.trim() && content.value.trim()){
-                var li = document.createElement("li");
-                li.innerHTML = "<h5>"+title.value+"</h5><p>"+content.value+"</p>";
-                document.querySelector("#boardList")
-                .append(li);
-                title.value = "";
-                content.value = "";
+            var title = document.querySelector('input[name=title]');
+            var content = document.querySelector('textarea[name=content]');
+            
+            if(!(title.value && content.value)){
+                return false;
             }
+
+            var li = document.createElement("li");
+            var h5 = document.createElement("h5");
+            var p = document.createElement("p");
+            
+            h5.innerText = title.value;
+            p.innerText = content.value;
+            
+            li.append(h5, p);
+            boardList.appendChild(li);
+            
+            title.value= "";
+            content.value = "";
+            
         }
         
         /* 
@@ -77,23 +86,20 @@
             검색내용을 비워둔후 재검색 눌렀을때는 전체 게시글목록이 나와야함.
         */
         function searchTitle(){
-            var str = document.querySelector("input[name=search]").value.trim();
-            var hs = document.querySelectorAll("li > h5");
+            var list = document.querySelectorAll("#boardList > li");
+            var search = document.querySelector("input[name=search]").value;
+            var fiteredList = [];
 
-            hs.forEach(function(p) {
-                var li = p.closest("li");
-
-                if (str === "") {
-                    li.style.display = "";
-                    return;
-                }
-
-                if (p.textContent.includes(str)) {
-                    li.style.display = "";
-                } else {
+            for(var li of list){
+                var textContent = li.querySelector("h5").innerText;
+                li.style.display = "block";
+                if(!textContent.includes(search)){
+                    //fiteredList.push(li);
+                    // 이친구들만 보여야함
                     li.style.display = "none";
                 }
-            });
+            }
+            console.log(fiteredList);
         }
     
     </script>
