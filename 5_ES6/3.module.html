@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./3.esm.js"></script>
+    <script type="module" >
+        import {sayHi, abc} from "./3.esm.js";
+
+        sayHi();
+        //default값 가져오기
+        //import abc from './3.esm.js';
+        //console.log(abc);
+
+        // {}가 없으면 무조건 default export을 가져온다
+        import fn1 from './3.esm.js';
+        console.log(fn1);
+
+        // as로 이름 바꾸기
+        import {sayHi as fn} from "./3.esm.js";
+        fn();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

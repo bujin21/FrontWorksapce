@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../test1.css">
+</head>
+<body>
+    <h1>포트폴리오 문제</h1>
+    <form action="">
+        <fieldset>
+            <legend>공지사항 작성하기</legend>
+            <div>
+                <div id="title">제목</div>
+                <input type="text" name="title" size="30" placeholder="제목을 입력하시오"><br>
+            </div>
+            <div>
+                <div id="content">내용</div>
+                <textarea name="content" cols="30" rows="10" style="resize: none;" placeholder="내용을 입력하시오."></textarea>
+            </div>
+            첨부파일 <input type="file" name="uploadFile" ><br>
+            <input type="submit" value="작성하기" id="in">
+        </fieldset>
+    </form>
+    <br>
+    <hr>
+    <table border="1">
+        <thead>
+            <th>번호</th>
+            <th colspan="2" id="tl" >제목</th>
+            <th >작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>  
+        </thead>
+        <tr>
+            <td>9</td>
+            <td>공지사항 제목 9</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>user01</td>
+            <td>2021-03-29</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>공지사항 제목 6</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>answ445</td>
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr>
+           <td>3</td>
+            <td>공지사항 제목 9</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>testg12</td>
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>공지사항 제목 2</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>palwe3</td>
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>공지사항 제목 1</td>
+            <td><input type="button" value="바로가기"></td>
+            <td>xnl23</td>
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+        
+        <tfoot>
+            <th colspan="4">전체공지사항 갯수</th>
+            <th colspan="2">5개</th>
+        </tfoot>
+  
+    </table>
+</body>
+</html>
