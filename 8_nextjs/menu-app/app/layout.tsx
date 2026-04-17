@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import { Provider } from "react-redux";
+import Providers from "./components/Providers";
 
 /* 
   #1. app /layout.tsx
@@ -25,12 +27,14 @@ export default function RootLayout({
       lang="ko">
       <body>
         <div id="container">
+          <Providers>
           <Header/>
           <section id="content">
             <div id="menu-container" className="text-center">
               {children}
             </div>
           </section>
+          </Providers>
         </div>
       </body>
     </html>

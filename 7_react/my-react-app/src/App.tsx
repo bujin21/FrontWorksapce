@@ -22,6 +22,8 @@ import ContextApi from './03_global_state/1.context/Context'
 import Counter from './03_global_state/2.redux/pages/Counter'
 import TodoList from './03_global_state/2.redux/pages/toDoList'
 import PokemonSearch from './02.react_advanced/PokemonSearch'
+import App2 from './pre/App1'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -62,6 +64,7 @@ function App() {
         <Route path='/counter' element={<Counter />} />
         <Route path='/todoList' element={<TodoList />} />
         <Route path='/pokemon' element={<PokemonSearch />} />
+        <Route path='/login' element={<App2 />} />
 
         <Route path="*" element={
           <div>
@@ -116,6 +119,9 @@ function App() {
           </li>
           <li>
             <Link to="/pokemon">포켓몬</Link>
+          </li>
+          <li>
+            <Link to="/login">로그인</Link>
           </li>
         </nav>
     </>
