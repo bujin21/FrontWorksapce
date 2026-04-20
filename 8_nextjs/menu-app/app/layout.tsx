@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import { Provider } from "react-redux";
 import Providers from "./components/Providers";
+import UserInfoInitializer from "./components/UserInfoInitializer";
 
 /* 
   #1. app /layout.tsx
@@ -29,6 +30,7 @@ export default function RootLayout({
         <div id="container">
           <Providers>
           <Header/>
+          <UserInfoInitializer />
           <section id="content">
             <div id="menu-container" className="text-center">
               {children}
